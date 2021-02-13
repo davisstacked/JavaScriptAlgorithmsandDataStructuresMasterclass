@@ -11,6 +11,9 @@ function addUpTo(n) {
     return total;
 }
 
+// slower example's number of operations grows with the numbers being checked. 
+// Number of operations is (eventually) bounded by a multiple of n (say, 10n): Big O of O(n)
+
 // slower example speed performance check
 var t1 = performance.now();
 addUpTo(1000000000);
@@ -22,6 +25,8 @@ function addUpTo(n) {
     return n * (n + 1) / 2;
 };
 
+// Fastest example above is always 3 operations: Big O of O(1)
+
 // faster example speed performance check
 var time1 = performance.now();
 addUpTo(1000000000);
@@ -29,3 +34,33 @@ var time2 = performance.now();
 console.log(`Time Elapsed: ${(time2 - time1) / 1000} seconds.`)
 
 
+// BIG O NOTATION 2.8 - OFFICIAL INTRO TO BIG O
+
+function countUpAndDown(n) {
+    console.log("Going up!");
+    // For loop counts the number of operations - increases as n goes up so O(n)
+    for (let i = 0; i < n; i++) { 
+        console.log(i);
+    }
+    console.log("At the top!\nGoing down...");
+    //  this loop is also O(n)
+    for (let j = n - 1; j >= 0; j--) {
+        console.log(j);
+    }
+    console.log("Back down. Bye!");
+}
+
+console.log(countUpAndDown(10));
+
+// omg moar examplez lol
+function printAllPairs(n) {
+    //O(n)
+    for (var i = 0; i < n; i++) {
+        // also O(n) 
+        for (var j = 0; j < n; j++) {
+            console.log(i, j);
+        }
+    }
+}
+
+// O(n) operation inside of an O(n) operation (like nested loops) is O(n2)

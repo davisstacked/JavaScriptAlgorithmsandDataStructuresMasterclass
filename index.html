@@ -14,7 +14,7 @@
 
     <h3 class="header">Big O Notation</h3>
 
-    <h4>Timing our Code 2.5</h4>
+    <h4>TIMING OUR CODE 2.5</h4>
     <h5>What does better mean?</h5>
     <ul>
         <li>Faster?</li>
@@ -31,9 +31,38 @@
         <li>For fast algorithms, speed measurements may not be precise enough?</li>
     </ul>
 
-    <h4>Counting Operations 2.6</h4>
+    <h4>COUNTING OPERATIONS 2.6</h4>
     <p>Depending on what we count, the number of operations can be as low as 2n or as high as 5n +2. But regardless of the exact number, the number of operations grows roughly <span>proportionally with n</span></p>
 
-    
+    <h4>Visualizing Time Complexities 2.7</h4>
+
+    <a href="https://rithmschool.github.io/function-timer-demo/">Performance Tracker for Big O that professor created - runs functions from this section of the course</a>
+
+    <p>A microsecond is one millionth of a second</p>
+
+    <p>number of operations performed negatively impacts speed of performance</p>
+
+    <h4>OFFICIAL INTRO TO BIG O 2.7</h4>
+    <p>Big O Notation is a way to formalize fuzzy counting</p>
+    <p>It allows us to talk formally about how the runtime of an algorithm grows as the inputs grow.</p>
+    <p>We don't care about details - only broad trends.</p>
+
+    <h5>Big O Definition</h5>
+    <p>We say that an algorithm is O(f(n)) if the number of simple operations the computer has to do is eventually less than a constant times f(n), as n increases.</p>
+    <ul>
+        <li>f(n) could be linear (f(n) = n)</li>
+        <li>f(n) could be quadratic (f(n) = n2)</li>
+        <li>f(n) could be constant (f(n) = 1</li>
+        <li>f(n) could be something entirely different!</li>
+    </ul>
+
+    <p>In mathematics, the term <strong>quadratic</strong> describes something that pertains to squares, to the operation of squaring, to terms of the second degree, or equations or formulas that involve such terms. Quadratus is Latin for square.</p>
+
+    <p>When we're talking about Big O we're talking about The Worst Case Scenario - the upper-bound for run-time</p>
+
+    <p>** O(n) operation inside of an O(n) operation (like nested loops) is O(n2) - an exponential curve which has a steep run-time increase.</p>
+
+    <h4>SIMPLIFYING BIG O EXPRESSIONS 2.9 </h4>
+
 </body>
 </html>
