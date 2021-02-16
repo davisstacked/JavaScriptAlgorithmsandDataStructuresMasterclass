@@ -89,5 +89,20 @@
 
     <img src="./Screen Shot 2021-02-16 at 2.09.39 PM.png" alt="Big O Notation">
 
+    <h4>Space Complexity</h4>
+
+    <p>So far, we've been focused on <strong>time complexity:</strong> how can we analyze the <span>runtime</span> of an algorithm as the size of the inputs increases?</p>
+    <p>We can also use big O notation to analyze <strong>space complexity:</strong> how much additional memory do we need to allocate in order to run the code in our algorithm?</p>
+
+    <h6>What about the inputs?</h6>
+    <p>Sometimes you'll hear the term <strong>auxiliary space complexity</strong> to refer to space required by the algorithm, not including space taken up by the inputs.</p>
+    <p>Unless otherwise noted, when we talk about space complexity, technically we'll be talking about auxiliary space complexity. (we're focusing on what happens inside of the algorithm.)</p>
+
+    <h5>Space Complexity in JS - Rules of Thumb</h5>
+    <ul>
+        <li>Most primitives (booleans, numbers, undefined, null) are constant space</li>
+        <li>Strings require O(n) space (where n is the string length)</li>
+        <li>Reference types are generally O(n), where n is the length (for arrays) or the number of keys (for objects)</li>
+    </ul>
 </body>
 </html>
