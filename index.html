@@ -64,5 +64,30 @@
 
     <h4>SIMPLIFYING BIG O EXPRESSIONS 2.9 </h4>
 
+    <ul>
+        <h5>Constants Don't Matter</h5>
+        <li>O(2n) simplifies down to O(n)</li>
+        <li>O(2n) simplifies down to O(n)</li>
+        <li>O(500) simplifies to O(1)</li>
+        <li>O(13n^2) simplifies to O(n^2)</li>
+    </ul>
+
+    <ul>
+        <h5>Smaller Terms Don't Matter</h5>
+        <li>O(n + 10) simplifies to O(n)</li>
+        <li>O(1000n + 50) simplifies to O(n)</li>
+        <li>O(n^2 + 5n + 8) simplifies to O(n^2)</li>
+    </ul>
+
+    <ul>
+        <h5>Big O Shorthands</h5>
+        <li>Arithmetic operations are constant</li>
+        <li>variable assignment is constant</li>
+        <li>Accessing elements in an array (by index) or object (by key) is constant</li>
+        <li>In a loop, the complexity is the length of the loop times the complexity of whatever happens inside of the loop.</li>
+    </ul>
+
+    <img src="./Screen Shot 2021-02-16 at 2.09.39 PM.png" alt="Big O Notation">
+
 </body>
 </html>

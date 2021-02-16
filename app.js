@@ -64,3 +64,18 @@ function printAllPairs(n) {
 }
 
 // O(n) operation inside of an O(n) operation (like nested loops) is O(n2)
+
+// A couple more examples
+// O(n)
+function logAtLeast5(n) {
+    for (let i = 1; i <= Math.max(5, n); i++) {
+        console.log(i);
+    }
+}
+
+// O(1)
+function logAtMost5(n) {
+    for (let i = 1; i <= Math.min(5, n); i++) {
+        console.log(i);
+    }
+}
