@@ -383,3 +383,59 @@ function factorialRecursive(num) {
 }
 
 console.log(factorialRecursive(10))
+
+// SECTION 48. HELPER METHOD RECURSION
+
+// This is the pattern of a helper function recursion
+function outer(input) {
+    let outerScopedVariable = [];
+
+    function helper(helperInput) {
+        // modify the outerScopedVariable
+        helper(helperInput--)
+    }
+
+    helper(input)
+
+    return outerScopedVariable;
+}
+
+// 48. Helper Method Recursion example
+// let's try to collect all of the odd values in an array!
+
+function collectOddValues(arr) {
+
+    let result = [];
+
+    function helper(helperInput) {
+        if (helperInput.length === 0) {
+            return;
+        }
+        if (helperInput[0] % 2 !== 0) {
+            result.push(helperInput[0])
+        }
+        helper(helperInput.slice(1))
+    }
+    helper(arr);
+    return result;
+}
+
+console.log(collectOddValues([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+
+// 49. PURE RECURSION
+// same as last sections problem - let's try to collect all of the odd values in an array!
+
+function collectOddValuesPure(arr) {
+    let newArr = [];
+
+    if (arr.length === 0) {
+        return newArr;
+    }
+    if (arr[0] % 2 !== 0) {
+        newArr.push(arr[0]);
+    }
+    newArr = newArr.concat(collectOddValues(arr.slice(1)));
+    return newArr;
+}
+
+console.log(collectOddValues([1, 2, 3, 4, 5, 6, 7, 7, 8, 9, 9]));
