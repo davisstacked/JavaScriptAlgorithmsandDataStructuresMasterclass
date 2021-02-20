@@ -439,3 +439,36 @@ function collectOddValuesPure(arr) {
 }
 
 console.log(collectOddValues([1, 2, 3, 4, 5, 6, 7, 7, 8, 9, 9]));
+
+// SECTION 8: RECURSION POWER SETS
+
+// Coding exercise 10: power
+// Write a function called power which accepts a base and an exponent. the function should return the power of the base to the exponent. This function should mimic the functionality of Math.pow() - do not worry about negative bases and exponents.
+
+function power(base, exponent) {
+    if (exponent === 0) return 1;
+    return base * power(base, exponent - 1);
+}
+
+console.log(power(4, 3));
+
+// Write a function factorial which accepts a number and returns the factorial of that number. A factorial is the product of an integer and all the integers below it; e.g., factorial four (4!) is equal to 24, because 4*3*2*1 equals 24. Factorial zero (0!) is always 1. 
+
+// SECTION 9: LINEAR SEARCH
+// linear search pseudocode
+// this function accepts an array and a value
+// loop through the array and check if the current array element is equal to the vlaue, if it is, return the index at which the element is found.
+
+// O(n)
+function linearSearch(arr, val) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === val) {
+            return `${val} was found at index ${i}`
+        }
+    }
+    return -1;
+}
+
+const leah = [1, 2, 3, 4, 5, 6, 7, 15, 26, 19];
+
+console.log(linearSearch(leah, 15));
