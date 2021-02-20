@@ -178,7 +178,6 @@
         <li>Multiple Pointers Pattern</li>
         <li>Sliding Window</li>
         <li>Divide and Conquer</li>
-        <li></li>
     </ul>
     <h5>Frequency Counter Pattern</h5>
 
@@ -195,5 +194,36 @@
 
     <h4>SECTION 7: RECURSION</h4>
 
+    <ul>
+        RECURSION OBJECTIVES
+        <li>define what recursion is and how it can be used.</li>
+        <li>understand the two essential components of a recursive function</li>
+        <li>visualize the call stack to better debug and understand recursive functions</li>
+        <li>Use helper method recursion and pure recursion to solve more difficult problems.</li>
+    </ul>
+
+    <p>What is recursion? A process (a function in our case) that calls itself. </p>
+
+    <ul>Recursion Algorithms
+        <li>JSON.parse/ JSON.stringify</li>
+        <li>document.getElementById and DOM traversal</li>
+        <li>Object traversal</li>
+        <li>We will see it with more complex data structures</li>
+        <li>It's sometimes a cleaner alternative to iteration</li>
+    </ul>
+
+    <h5>42. The Call Stack</h5>
+
+    <ul>The call stack
+        <li>It's a stack data structure - we'll talk about that later!</li>
+        <li>Any time a function is invoked it is placed(pushed) on the top of the call stack</li>
+        <li>When Javascript sees the return keyword or when the function ends, the compiler will remove (pop)</li>
+        <li>When we write recursive functions, we keep pushing new functions onto the call stack! </li>
+    </ul>
+
+    <h5>Our First Recursive Function</h5>
+    <p>How recursive functions work - invoke the SAME function with a different input until you reach your base case!</p>
+    <p>BASE CASE - the condition when the recursion ends. THIS IS THE MOST IMPORTANT CONCEPT TO UNDERSTAND</p>
+    <p>TWO ESSENTIAL PARTS OF A RECURSIVE FUNCTION 1. Base Case 2. Different Input</p>
 </body>
 </html>

@@ -349,3 +349,18 @@ function search(array, val) {
 
     return -1;
 }
+
+// SECTION 43. OUR FIRST RECURSIVE FUNCTION 
+
+// our first recursive function
+function countDown(num) {
+    if (num <= 0) {
+        console.log('all done!');
+        return;
+    }
+    console.log(num);
+    num--;
+    countDown(num);
+}
+
+console.log(countDown(20));
