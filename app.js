@@ -454,7 +454,7 @@ console.log(power(4, 3));
 
 // Write a function factorial which accepts a number and returns the factorial of that number. A factorial is the product of an integer and all the integers below it; e.g., factorial four (4!) is equal to 24, because 4*3*2*1 equals 24. Factorial zero (0!) is always 1. 
 
-// SECTION 9: LINEAR SEARCH
+// SECTION 10: SEARCHING ALGORITHMS
 // linear search pseudocode
 // this function accepts an array and a value
 // loop through the array and check if the current array element is equal to the vlaue, if it is, return the index at which the element is found.
@@ -472,3 +472,30 @@ function linearSearch(arr, val) {
 const leah = [1, 2, 3, 4, 5, 6, 7, 15, 26, 19];
 
 console.log(linearSearch(leah, 15));
+
+//62. BINARY SEARCH pseudocode solution
+// This function accepts a sorted array and a value
+// create a left pointer at the start of the array, and a right pointer at the end of the array. 
+// While the left pointer comes before the right pointer: 
+    // create a pointer in the middle
+    // if you find teh value you want, return the index
+    // if the value is too small, move the left pointer up. 
+// if you never find the value, return -1
+function binarySearch(arr, val) {
+    let left = 0;
+    let right = arr.length - 1;
+    let middle = Math.floor((left + right) / 2);
+    while (arr[middle] !== val && left <= right) {
+        if (val < arr[middle]) {
+            end = middle - 1;
+        } else {
+            start = middle + 1;
+        }
+        middle = Math.floor((left + right) / 2);
+    }
+    if (arr[middle] === val) {
+        return middle;
+    }
+}
+
+
