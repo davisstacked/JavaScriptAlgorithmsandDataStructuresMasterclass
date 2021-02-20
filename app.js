@@ -364,3 +364,22 @@ function countDown(num) {
 }
 
 console.log(countDown(20));
+
+// section 45. writing factorial iteratively
+function factorial(num) {
+    let total = 1;
+    for (let i = num; i > 0; i--) {
+        total *= i
+    }
+    return total;
+}
+
+console.log(factorial(10));
+
+// SECTION 46. WRITING FACTORIAL RECURSIVELY
+function factorialRecursive(num) {
+    if (num === 1) return 1;
+    return num * factorialRecursive(num - 1);
+}
+
+console.log(factorialRecursive(10))
