@@ -498,4 +498,66 @@ function binarySearch(arr, val) {
     }
 }
 
+//  64. NAIVE STRING SEARCH
+// pseudocode:
+// loop over the longer string
+// loop over the shorter string
+//if the characters don't match, break out of the inner loop
+// if the characters do match, keep going
+// if you complete the inner loop and find a match, increment the count of matches
+// return the count.
+function naiveSearch(long, short) {
+    let count = 0;
+    for (let i = 0; i < long.length; i++) {
+        for (let j = 0; j < short.length; j++) {
+            if (short[j] !== long[i + j]) break;
+            if(j === short.length - 1) {
+                count++;
+            }
+        }
+    }
+    return count;
+}
 
+console.log(naiveSearch("lorie loled", "lol"));
+
+// 68. Introduction to Sorting Algorithms
+
+// 70. Bubble Sort: Overview
+
+//Before we start, we must swap!
+// Many sorting algorithms involve some type of swapping functionality (e.g. swapping to numbers to put them in order)
+
+function swap(arr, idx1, idx2) {
+    let temp = arr[idx1];
+    arr[idx1] = arr[idx2];
+    arr[idx2] = temp;
+}
+
+// Bubble Sort Pseudocode
+// define a function called bubblesort that takes an array which is all numbers 
+// Start Looping with a variable called i from the end of the array towards the beginning. 
+// start an inner loop with a variable called j from the beginning until i - 1
+// if arr[j] is greater than arr[j+1], swap those two values!
+// return the sorted array
+
+function bubbleSort(arr) {
+    let noSwaps;
+    for (let i = arr.length; i > 0; i--) {
+        noSwaps = true;
+        for (var j = 0; j < i - 1; j++) {
+            console.log(arr, arr[j], arr[j + 1]);
+            if (arr[j] > arr[j + 1]) {
+                // SWAP!
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                noSwaps = false;
+            }
+        }
+        if (noSwaps) break;
+    }
+    return arr;
+} 
+
+console.log(bubbleSort([37, 45, 29, 8]));
