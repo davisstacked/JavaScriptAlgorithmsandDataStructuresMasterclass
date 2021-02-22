@@ -561,3 +561,33 @@ function bubbleSort(arr) {
 } 
 
 console.log(bubbleSort([37, 45, 29, 8]));
+
+// 75. Selection Sort: Introduction
+
+//Selection Sort pseudocode
+//Store the first element as the smallest value you've seen so far.
+// Compare this item to the next item in the array until you find a smaller number.
+// if a smaller number is found, designmate that smaller number to be the new "minimum" and continue until the end of the array.
+// If the 'mimimum is not the value (index) you initially began with, swap the two values.
+//Repeat this with the next element until the array is sorted. 
+
+// 76. from 75. Selection Sort pseudocode
+//Big O complexity is O(n^2);
+function selectionSort(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        let lowest = i;
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[lowest]) lowest = j;      
+        }
+        if (i !== lowest) swap(arr, i, lowest);
+    }
+}
+
+console.log(selectionSort([34, 22, 10, 19, 17]));
+
+// 79. Insertion Sort Pseudocode
+
+//Start by picking the second element in the array
+//Now compare the second element to the one before it and swap if necessary.
+//Continue to the next element and if it is in the incorrect order, iterate through the sorted portion (i.e. the left side) to place the element in the correct place.
+//Repeat until the array is sorted. 
