@@ -41,3 +41,39 @@ console.log(countUniqueValues([1, 1, 1, 1, 1, 2])) // 2
 console.log(countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13])) // 7
 console.log(countUniqueValues([])) // 0
 console.log(countUniqueValues([-2, -1, -1, 0, 1])) // 4
+
+// Implement a function called areThereDuplicates which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in. You can solve this using the frequency counter pattern OR the multiple pointers pattern.
+
+areThereDuplicates(...args) {
+  // Two pointers
+  args.sort((a,b) => a > b);
+  let start = 0;
+  let next = 1;
+  while(next < args.length){
+    if(args[start] === args[next]){
+        return true
+    }
+    start++
+    next++
+  }
+  return false
+};
+
+// Write a function called averagePair. Given a SORTED array of integers and a target average, determine if there is a pair of values in the array where the average of the pair equals the target average. There may be more than one pair that matches the target average.
+
+function averagePair(arr, targetAvg) {
+  if (!arr.length) {
+    return false;
+  }
+  let left = 0;
+  let right = arr.length - 1;
+  while (left < right) {
+    let avg = (arr[left] + arr[right]) / 2;
+    if (avg === targetAvg) {
+      return true;
+    } else if (avg < targetAvg) {
+      left++;
+    } else right--;
+  }
+  return false;
+}
