@@ -63,12 +63,12 @@ console.log(validAnagram('timetwisttext', 'texttwisttime'));
 // My solution
 
 function sameFrequency(num1, num2) {
-  if (num1.length !== num2.length) {
+  // converts a number to an iterable string
+  let str1 = "" + num1;
+  let str2 = "" + num2;
+  if (str1.length !== str2.length) {
     return false;
   }
-  // converts a number to an iterable string
-  str1 = "" + num1;
-  str2 = "" + num2;
   let frequencyCounter1 = {};
   let frequencyCounter2 = {};
   for (let val of str1) {
@@ -92,3 +92,18 @@ function sameFrequency(num1, num2) {
 
 console.log(sameFrequency(123456123456, 654321654321));
 console.log(sameFrequency(12345671234567, 23456782345678));
+
+
+// Implement a function called areThereDuplicates which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in. You can solve this using the frequency counter pattern OR the multiple pointers pattern.
+// areThereDuplicates Solution (Frequency Counter Solution)
+// ...theArgs (spread operator) lets you have as many arguments as you want
+function areThereDuplicates( ...theArgs) {
+  let collection = {}
+  for(let val of theArgs){
+    collection[[val]] = (collection[[val]] || 0) + 1
+  }
+  for(let key in collection){
+    if(collection[key] > 1) return true
+  }
+  return false;
+}
