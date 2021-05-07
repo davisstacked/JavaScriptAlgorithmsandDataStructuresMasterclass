@@ -77,3 +77,23 @@ function averagePair(arr, targetAvg) {
   }
   return false;
 }
+
+// Write a function called isSubsequence which takes in two strings and checks whether the characters in the first string form a subsequence of the characters in the second string. other words, the function should check whether the characters in the first string appear somewhere in the second string, WITHOUT THEIR ORDER CHANGING
+
+function isSubsequence(str1, str2) {
+  var i = 0;
+  var j = 0;
+  // if the first string doesn't exist then the answer is TRUE - the first string of letters exist in the second string of letters.
+  if (!str1) return true;
+  // While there are still letters to check in the second word then...
+  while (j < str2.length) {
+  // if the first letter in the first and second word match, then move to the second letter of each word, then third letter, etc.
+    if (str2[j] === str1[i]) i++;
+  // if you make it to the end of the first word with the letters all matching a string from the second word then this is TRUE!
+    if (i === str1.length) return true;
+  // if the first letter in the first string doesn't match the first letter of the second string, move up a letter in the second string then check again. Whenever letters match move forward one for each. 
+    j++;
+  }
+  // if, after checking all of the letters, you cannot find the first word duplicated somewhere in the second then Return FALSE!
+  return false;
+}
