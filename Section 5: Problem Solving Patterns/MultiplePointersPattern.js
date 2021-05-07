@@ -97,3 +97,17 @@ function isSubsequence(str1, str2) {
   // if, after checking all of the letters, you cannot find the first word duplicated somewhere in the second then Return FALSE!
   return false;
 }
+
+// Recursive solution to isSubsequence()
+function isSubsequence(str1, str2) {
+  // if the first word doesn't have any letters than its true
+  if (str1.length === 0) return true
+  // if the second word has no letters than it's false cause the first word can't appear in the second word if it doesn't exist
+  if (str2.length === 0) return false
+  // if the first letter in each word is the same then run this function again but on the second letter of each word.
+  if (str2[0] === str1[0]) return isSubsequence(str1.slice(1), str2.slice(1))
+  // if the first letter of the first word doesnt match the first letter of the second word, then run this function again looking now at the first letter of the first word and the second letter of the second word. If you don't find a match again move on to the 3rd letter of the second word - compare it against the first - and if it's a match check the next letter of each. keep looking to see if there is a match.
+  // if you make it to the end of the first word and there are no letters left then you'll know you found a match! (you wouldn't have been iterating through letters otherwise) 
+  // if you make it to the end of the second word first then you will know they don't have a match and return false.
+  return isSubsequence(str1, str2.slice(1))
+}
