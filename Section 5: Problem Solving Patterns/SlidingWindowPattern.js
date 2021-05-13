@@ -114,16 +114,27 @@ function findLongestSubstring(str) {
   let longest = 0;
   let seen = {};
   let start = 0;
- 
+//  iterate over the string argument
   for (let i = 0; i < str.length; i++) {
+  // each letter in the string when it is being iterated over is known as "char"
     let char = str[i];
+    console.log(char);
+    // if our object has that character in it already then we've reached the end of a unique substring and need to check if there are longer unique substrings...
+    // so on our first loop there is no seen[char] in the object so it is false and we don't do this part.
     if (seen[char]) {
+      // then we need to start looking at new substrings by setting start to either 0 or the number of times we've seen a character - whichever is larger 
       start = Math.max(start, seen[char]);
+      console.log(start)
     }
+    console.log(seen[char])
     // index - beginning of substring + 1 (to include current in count)
+    // after the first loop, longest will be 1 because it is comparing 0 to 0
     longest = Math.max(longest, i - start + 1);
+    console.log(longest);
     // store the index of the next char so as to not double count
     seen[char] = i + 1;
   }
   return longest;
 }
+
+console.log(findLongestSubstring('thisisawesome'));
