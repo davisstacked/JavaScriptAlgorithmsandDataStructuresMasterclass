@@ -111,13 +111,27 @@ function recursiveRange(num) {
 function fib(n) {
   if (n <= 2) return 1;
   return fib(n - 1) + fib(n - 2);
-  // for n = 6 this would be 5 + 3
 }
 
-console.log(fib(6));
+console.log(fib(25));
 
 // Coding exercise 15: reverse
 // Write a function called reverse which accepts a string and returns a new string in reverse.
-function reverse() {
+// my attempt - doesnt work
+// function reverse(str) {
+//   let reversedArr = [];
+//   let arr = str.split("");
+//   let end = arr.length;
+//   if (end === 0) return reversedArr;
+//   reversedArr.push(arr[end]);
+//   reverse(arr.pop());
+// };
 
-};
+
+// Reverse Solution
+function reverse(str) {
+  if (str.length <= 1) return str;
+  return reverse(str.slice(1)) + str[0];
+}
+
+reverse("hellodolly");
