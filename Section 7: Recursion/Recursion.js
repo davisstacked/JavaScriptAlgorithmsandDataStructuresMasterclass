@@ -156,3 +156,42 @@ function isPalindrome(str){
   if(str[0] === str.slice(-1)) return isPalindrome(str.slice(1,-1))
   return false;
 }
+
+// Write a recursive function called someRecursive which accepts an array and a callback. The function returns true if a single value in the array returns true when passed to the callback. Otherwise it returns false. 
+function someRecursive(array, callback) {
+  if (array.length === 0) return false;
+  if (callback(array[0])) return true;
+  return someRecursive(array.slice(1),callback);
+}
+
+// Coding Challenge 18.
+// Flatten
+// Write a recursive function called flatten which accepts an array of arrays and returns a new array with all values flattened. 
+// my attempt - doesnt work
+// function flatten(arr) {
+//   if (arr.length === 0) return arr;
+//   if (Array.isArray(arr[0])) {
+//     arr.flat();
+//     return flatten(arr.slice(1))
+//   } else {
+//     return flatten(arr.slice(1))
+//   }
+// };
+
+// Solution to Coding Challenge 18 
+function flatten(oldArr){
+  var newArr = []
+  // iterate over the length of the array
+  for (var i = 0; i < oldArr.length; i++){
+      // if the first element in the array is an array
+    if (Array.isArray(oldArr[i])) {
+        // then merge this old array into the new array
+      		newArr = newArr.concat(flatten(oldArr[i]))
+    	} else {
+      		newArr.push(oldArr[i])
+    	}
+  } 
+  return newArr;
+}
+
+console.log(flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]));
