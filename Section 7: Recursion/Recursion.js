@@ -194,4 +194,26 @@ function flatten(oldArr){
   return newArr;
 }
 
-console.log(flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]));
+// console.log(flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]));
+
+// Write a recursive function called capitalizeFirst. given an array of strings capitalize the first letter of each string in the array.
+// my solution doesnt work
+// function capitalizeFirst(arr) {
+//   if (arr.length === 0) return arr;
+//   for (let i = 0; i < arr.length; i++) {
+//     arr[i][0].toUpperCase();
+//   }
+// };
+
+function capitalizeWords (array) {
+  if (array.length === 1) {
+    return [array[0].toUpperCase()];
+  }
+  // creating a new array that doesn't include the last element
+  let res = capitalizeWords(array.slice(0, -1));
+  res.push(array.slice(array.length-1)[0].toUpperCase());
+  return res;
+ 
+}
+
+console.log(capitalizeFirst(['car','taco','banana']))
