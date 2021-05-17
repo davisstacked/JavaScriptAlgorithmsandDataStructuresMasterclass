@@ -217,3 +217,22 @@ function capitalizeFirst (array) {
   console.log(array.slice(array.length - 1));
   return res;
 }
+
+
+console.log(capitalizeFirst(['car', 'toad', 'milk', 'cream']))
+
+// Write a recursive function called nestedEvenSum. Return the sum of all even numbers in an object which may contain nested objects.
+function nestedEvenSum(obj, sum = 0) {
+  // look at ever key in the object.
+  for (var key in obj) {
+    // if the type of the object key is an object
+    if (typeof obj[key] === 'object') {
+        // then that means there's nesting to get to the even numbers we need. so we'll run the equation again to look through the smaller object inside of the object in order to extract the numbers. 
+      sum += nestedEvenSum(obj[key]);
+      // if the object in the object is a number and it's even then add it to the sum.
+      } else if (typeof obj[key] === 'number' && obj[key] % 2 === 0){
+          sum += obj[key];
+      }
+  }
+  return sum;
+}
