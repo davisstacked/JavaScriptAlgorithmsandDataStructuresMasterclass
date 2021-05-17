@@ -43,3 +43,25 @@ function binarySearch(arr, val) {
 };
 
 console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 7));
+
+// Naive String Search
+// pseudocode
+// loop over the longer string
+// loop over the shorter string
+// if the characters dont match, break out of the inner loop
+// if the characters do match, keep going
+// if you complete the inner loop and find a match, increment the count of matches
+// return the count
+
+function naiveString(long, short) {
+  let matches = 0;
+  for (let i = 0; i < long.length; i++) {
+    for (let j = 0; j < short.length; j++) {
+      if (long[i+j] !== short[j]) break;
+      if (j === short.length - 1) matches++;
+    };
+  }
+  return matches;
+};
+
+console.log(naiveString('hellomellowhellowmello', 'ello'));
