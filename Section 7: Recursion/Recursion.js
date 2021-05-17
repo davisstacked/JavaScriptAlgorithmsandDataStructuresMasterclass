@@ -272,3 +272,50 @@ function stringifyNumbers(obj) {
 }
 
 
+
+// Solution for collect string - helper function recursion
+function collectStrings(obj) {
+  var stringsArr = [];
+  
+  function gatherStrings(o) {
+    for(var key in o) {
+      if(typeof o[key] === 'string') {
+        stringsArr.push(o[key]);
+      }
+      else if(typeof o[key] === 'object') {
+        return gatherStrings(o[key]);
+      }
+    }
+  }
+  
+  gatherStrings(obj);
+  
+  return stringsArr;
+}
+
+// Write a function called collectStrings which accepts an object and returns an array of the values in the object that have the typeof string. 
+// my solution
+function collectStrings(obj) {
+  stringsArray = [];
+  for (let key in obj) {
+    if (typeof obj[key] === 'string') {
+      stringsArray.push(obj[key]);
+    } else if (typeof obj[key] === 'object') {
+      stringsArray = stringsArray.concat(collectStrings(obj[key]))
+    } 
+  }
+};
+// collectStrings Solution: Pure Recursion Version
+function collectStrings(obj) {
+    var stringsArr = [];
+    for(var key in obj) {
+        if(typeof obj[key] === 'string') {
+            stringsArr.push(obj[key]);
+        }
+        else if(typeof obj[key] === 'object') {
+            stringsArr = stringsArr.concat(collectStrings(obj[key]));
+        }
+    }
+ 
+    return stringsArr;
+}
