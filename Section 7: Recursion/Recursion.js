@@ -236,3 +236,39 @@ function nestedEvenSum(obj, sum = 0) {
   }
   return sum;
 }
+
+// Capitalize Words
+// Write a recursive function called capitalizeWords. Given an array of words return a new array containing each word capitalized.
+function capitalizeWords(arr) {
+  if (array.length === 1) {
+    return [array[0].toUpperCase()];
+  }
+  const res = capitalizeWords(array.slice(0, -1));
+  const string = array.slice(array.length - 1)[0].toUpperCase();
+  res.push(string);
+  return res;
+}
+
+// Stringify Numbers
+// write a function called stringifyNumbers which takes in an object and finds all of the values which are numbers and converts them to strings.
+function stringifyNumbers(obj) {
+  // create a new array
+  var newObj = {};
+  //  if the object type of the object is a number  
+  for (let key in obj) {
+    if (typeof obj[key] === 'number') {
+      // then convert the object to a string and add it to the new object
+      newObj[key] = obj[key].toString();
+      // if the type of the object is an object but NOT an array, then run the function again with the smaller object 
+    } else if (typeof obj[key] === 'object' && !Array.isArray(obj[key])) {
+      newObj[key] = stringifyNumbers(obj[key]);
+    } else {
+      // otherwise add the key value pair from the old object to the new object.
+      newObj[key] = obj[key];
+    }
+  }
+  // return the new object so we don't modify the original object.
+  return newObj;
+}
+
+
