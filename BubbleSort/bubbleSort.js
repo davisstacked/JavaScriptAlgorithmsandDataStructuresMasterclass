@@ -35,16 +35,22 @@ const leah = [23, 3, 33, 34, 5, 66, 7, 77, 8, 20];
 
 
 // Class Solution
+// Big O(n^2) not good o of n from nested loops
 function bubbleSort(arr) {
+  // noSwaps allows us to stop sorting once array is sorted
+  let noSwaps;
   for (let i = arr.length; i > 0; i--) {
+    noSwaps = true;
     for (let j = 0; j < i -1; j++) {
       if (arr[j] > arr[j + 1]) {
         // SWAP
         let temp = arr[j];
         arr[j] = arr[j + 1];
         arr[j + 1] = temp;
+        noSwaps = false;
       }
     }
+    if (noSwaps) break;
   }
   return arr;
 }
