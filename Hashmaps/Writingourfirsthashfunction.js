@@ -23,7 +23,7 @@ function hash(key, arrayLen) {
 // it's also helpful if the array that you're putting values into has a prime length.
 
 
-function hashR evisited(key, arrayLen) {
+function hashRevisited(key, arrayLen) {
   let total = 0;
   let WEIRD_PRIME = 31;
   for (let i = 0; i < Math.min(key.length, 100); i++) {
